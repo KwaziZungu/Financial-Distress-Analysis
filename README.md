@@ -42,7 +42,7 @@ The data contains _3673_ rows with _86_ columns.
 - **Third column**, called **Financial Distress** tells us about the financial distress level of the company at that period in time. Although this is shown as random floating numbers, note that if the value in this column is less than _-0.5_ then the company is in distress but it is healthy otherwise.
 - The remaining _83_ columns, called **'x1', 'x2', ..., 'x83'** are features for each company at each time period.
 
-As an example on how to read this data using the first 3 columns,
+As an example on how to read this data using the first _3_ columns,
 company _1_ was financially healthy at time _3_ but it was in distress at time _4_.
 
 ## 4. Machine Learning Algorithm Used
