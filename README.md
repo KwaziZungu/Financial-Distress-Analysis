@@ -45,8 +45,27 @@ The data contains _3673_ rows with _86_ columns.
 As an example on how to read this data using the first _3_ columns,
 company _1_ was financially healthy at time _3_ but it was in distress at time _4_.
 
-## 4. Machine Learning Algorithm Used
+## 4. Machine Learning Algorithm To Use
+
+The [Support Vector Machine](https://scikit-learn.org/stable/modules/svm.html) algorithm is being used for this data, due to the multi-dimensional nature of the input variable/features.
+For the model's setup, we use the **SVC (Support Vector Classifier)** method provided by Scikit Learn. sk-learn is considered as community standard so every action here is easy to replicate.
+
+For the model setup ( feel free to study the code on how this was achieved ):
+
+- Input data, **X**, consists of the _83_ features columns and the _Time_ column.
+- Output data, **Financial Distress** or **y**, consists of dummy values _True_ and _False_, where _True_ indicates that a company is in distress at that period.
+- _70%_ of the overall data is used for training, while the remaining _30%_ is being used for testing ( Data points chosen at random ).
+- The **Regularization Parameter (C)** can be found using an optimisation method called _Grid Search_, _C=1_ is the best estimate obtained for the parameter.
+- The **_linear_** **kernel function** is being used for this model as it best fits the current data ( This was discovered through trial and error ).
+- Below is a graph representing the actual values for the _30%_ test data consisting of _1102_ data points or predictions: ![Relative](images/TrueDataPlot.png) _Time_ and _x12_ are arbitrary choices for plot variables, any of the **X** columns/features can be plotted against each other.
 
 ## 5. Results
+
+A **Sample**, for our purposes can be defined as any company at a specific period in time. For example, the sample described as company _1_ at time _3_ was predicted to be financially healthy.
+
+- _1102_ predicitions were made by the model (this can also be taken as the number of samples). _1053_ or _95.55%_ of samples were predicted to be financially healthy and _49_ or _4.45%_ were predicted to be in financial distress.
+- The model predicted financially healthy samples with an accuracy of _~97%_ and the prediction for samples in distress was only _~48%_ accurate. The overall accuracy was _~95%_. _Possible signs of overfitting_.
+- _1040_ or _94.37%_ of the samples were correctly predicted to be healthy, _12_ or _1.09%_ were correctly predicted to be in distress, _13_ or _1.18%_ were falsely predicted to be in distress and _37_ or _3.36%_ were falsely predicted as healthy.
+- Below is a plot for the predicted data for visual comparison along with the plot on the previous chapter: ![Relative](images/PredDataPlot.png)
 
 ## 6. Recommendations
