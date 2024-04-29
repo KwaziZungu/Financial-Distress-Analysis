@@ -69,3 +69,11 @@ A **Sample**, for our purposes can be defined as any company at a specific perio
 - Below is a plot for the predicted data for visual comparison along with the plot on the previous chapter: ![Relative](images/PredDataPlot.png)
 
 ## 6. Recommendations
+
+Overall our model's performance was good but nowhere near perfect. There are many areas of improvment to be identified, but here are some that I personally had trouble with while working on this:
+
+- Testing the model on multiple train/test splits to see which one gives the most reliable accuracy, i.e. splitting it 80/20 instead of 70/30.
+- Perform a specialised method to deal with the possible case of overfitting for _financially Healthy_ samples since this badly affected the prediction accuracy for _financially in distress_ samples.
+- This problem was viewed as a classification problem. Integrating regression for the independent _Time_ variable with SVM could have provided better results, testing this out could be interesting.
+- Check how does different random states for the train/test split affect out results.
+- A faster, new gen computer should be used to perform these tests mentioned. I was using an _8GB-i3 Core_ computer which turned out to be very slow in handling some of these operations. As a result I could not test many of these factors, as it sometimes took 2 hours to fit the model.
